@@ -52,8 +52,8 @@ $options = $block->getOptions();
         echo $this->formSelect($formStem . '[options][gallery-file-size]',
             @$options['gallery-file-size'], array(),
             array(
-                'square_thumbnail' => __('Square Thumbnail'),
                 'thumbnail' => __('Thumbnail'),
+                'square_thumbnail' => __('Square Thumbnail'),
             ));
         ?>
     </div>

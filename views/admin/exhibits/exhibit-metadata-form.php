@@ -49,7 +49,7 @@
                 <?php echo $this->formLabel('theme', __('Theme')); ?>
             </div>
             <div class="five columns omega inputs">
-                <?php $values = array('' => __('Current Public Theme')) + exhibit_builder_get_themes(); ?>
+                <?php $values = exhibit_builder_get_themes(); ?>
                 <?php echo get_view()->formSelect('theme', $exhibit->theme, array(), $values); ?>
                     <input type="submit" class="configure-button" name="configure-theme" value="<?php echo __('Configure'); ?>">
             </div>
@@ -74,6 +74,12 @@
                 <?php echo $this->partial('files/cover-image.php', array('file' => $exhibit->getCoverImage())); ?>
             </div>
         </div>
+    <?php 
+      // fcd1, 05/07/15: Add capability to view/change exhibit owner
+      fire_plugin_hook('edit_exhibit_metadata',array('user' => current_user(),
+                                                     'view' => $this,
+                                                     'exhibit' => $exhibit ) );
+    ?>
     </fieldset>
     <fieldset>
         <legend><?php echo __('Pages'); ?></legend>

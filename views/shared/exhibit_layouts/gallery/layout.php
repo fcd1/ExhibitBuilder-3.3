@@ -24,4 +24,6 @@ $captionPosition = isset($options['captions-position'])
 <div class="gallery <?php if ($showcaseFile || !empty($text)) echo "with-showcase $galleryPosition"; ?> captions-<?php echo $captionPosition; ?>">
     <?php echo $this->exhibitAttachmentGallery($attachments, array('imageSize' => $galleryFileSize)); ?>
 </div>
-<?php echo $text; ?>
+<div class="gallery-text <?php echo 'showcase-'.$showcasePosition; ?> gallery-<?php echo $galleryPosition; ?>">
+    <?php echo $text; ?>
+</div>
