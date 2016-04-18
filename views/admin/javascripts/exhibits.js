@@ -377,7 +377,7 @@ Omeka.ExhibitBuilder = {};
             forceHelperSize: true,
             toleranceElement: '> div',
             placeholder: 'ui-sortable-highlight',
-            containment: 'document',
+            containment: 'body',
             maxLevels: 3
         });
     };
